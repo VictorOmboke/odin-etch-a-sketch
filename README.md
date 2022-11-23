@@ -1,1 +1,1 @@
-# odin-etch-a-sketch
+The goal of this project is to build an etch-a-sketch primarily using javascript DOM manipulation with some HTML and CSS for styling. This project comes from The Odin Project JavaScript section in the Foundations curriculum. 
