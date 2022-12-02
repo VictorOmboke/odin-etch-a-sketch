@@ -1,11 +1,12 @@
+//name container in DOM
 const container = document.querySelector('#container');
 
+//Function that will create a grid
 function makeGrid(rows, cols) {
     container.style.setProperty('--grid-rows', rows);
     container.style.setProperty('--grid-cols', cols);
     for (let i = 0; i < (rows * cols); i++) {
         let cell = document.createElement('div');
-        cell.innerText = (i + 1);
         cell.classList.add('grid-item');
         container.appendChild(cell);
     };
