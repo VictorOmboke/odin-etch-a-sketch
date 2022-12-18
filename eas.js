@@ -1,19 +1,39 @@
-//name DOM elements
+//DOM elements
 const container = document.querySelector('#container');
-let gridSize = prompt('Please enter grid size:', 16);
+const buttons = document.querySelector('#buttons');
 
-//Function that will create a grid (inp = input) and add hover effect for cells
-function makeGrid(inp) {
-    container.style.setProperty('--grid-rows', inp);
-    container.style.setProperty('--grid-cols', inp);
-    for (let i = 0; i < (inp * inp); i++) {
+//Create slider button for user to choose grid size
+const slider = document.createElement('input');
+slider.classList.add('grid-size');
+slider.setAttribute('type', 'range');
+slider.setAttribute('min', '1');
+slider.setAttribute('max', '64');
+slider.setAttribute('value', '32');
+buttons.appendChild(slider);
+
+const output = document.createElement('div');
+output.classList.add('value');
+output.textContent = `Grid Size: ${slider.value} x ${slider.value}`;
+buttons.appendChild(output);
+
+//create eventListener that creates the grid and allows user to change gridSize using range slider
+slider.addEventListener('change', function () {
+    let input = slider.value;
+
+    container.textContent = '';
+
+    container.style.setProperty('--grid-rows', input);
+    container.style.setProperty('--grid-cols', input);
+
+    for (let i = 0; i < (input * input); i++) {
         let cell = document.createElement('div');
         cell.classList.add('grid-item');
         container.appendChild(cell);
+
         cell.addEventListener('mouseover', () => {
             cell.style.backgroundColor = 'black';
         });
     };
-};
+    output.textContent = `Grid Size: ${this.value} x ${this.value}`;
+});
 
-makeGrid(gridSize);
