@@ -3,6 +3,22 @@
     --grid-rows: 1;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#grid-container {
+    display: grid;
+    border: 1px solid red;
+    width: 600px;
+    height: 600px;
+}
+
 #container {
     display: grid;
     gap: 0;
@@ -12,6 +28,43 @@
 
 .grid-item {
     border: 1px solid black;
-    padding: 1em;
-    text-align: center;
+    padding: 0.2rem;
+}
+
+#buttons {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.grid-size {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    box-shadow: 1px 1px;
+    border-radius: 5px;
+    background: #139f00;
+    outline: none;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.grid-size::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: 1px 1px;
+    border: 1px solid #000000;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.grid-size::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #ffffff;
+    cursor: pointer;
 }
