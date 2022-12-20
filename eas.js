@@ -1,6 +1,7 @@
 //DOM elements
 const container = document.querySelector('#container');
 const buttons = document.querySelector('#buttons');
+const reset = document.createElement('button');
 
 //Create slider button for user to choose grid size
 const slider = document.createElement('input');
@@ -11,10 +12,16 @@ slider.setAttribute('max', '64');
 slider.setAttribute('value', '32');
 buttons.appendChild(slider);
 
+//Create div to display the value of the range slider
 const output = document.createElement('div');
 output.classList.add('value');
 output.textContent = `Grid Size: ${slider.value} x ${slider.value}`;
 buttons.appendChild(output);
+
+//Add a reset button to the buttons container
+reset.classList.add('reset');
+reset.textContent = 'Reset';
+buttons.appendChild(reset);
 
 //create eventListener that creates the grid and allows user to change gridSize using range slider
 slider.addEventListener('change', function () {
@@ -34,6 +41,19 @@ slider.addEventListener('change', function () {
             cell.style.backgroundColor = 'black';
         });
     };
+
+    //Use an eventListener to reset the grid to white
+    const gridItems = document.querySelectorAll('.grid-item');
+
+    reset.addEventListener('click', () => {
+        gridItems.forEach(cell => {
+            cell.style.backgroundColor = 'white';
+        });
+    });
+
     output.textContent = `Grid Size: ${this.value} x ${this.value}`;
+
 });
+
+//Create a reset button for the grid
 
