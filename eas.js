@@ -2,6 +2,19 @@
 const container = document.querySelector('#container');
 const buttons = document.querySelector('#buttons');
 const reset = document.createElement('button');
+const header = document.querySelector('#header');
+
+//Create header for page
+const title = document.createElement('h1');
+title.classList.add('title');
+title.textContent = 'Etch-a-Sketch';
+header.appendChild(title);
+
+//Create instructions for etch-a-sketch
+const howTo = document.createElement('div');
+howTo.classList.add('rules');
+howTo.textContent = 'Select a grid size and have fun';
+header.appendChild(howTo);
 
 //Create slider button for user to choose grid size
 const slider = document.createElement('input');
@@ -54,6 +67,3 @@ slider.addEventListener('change', function () {
     output.textContent = `Grid Size: ${this.value} x ${this.value}`;
 
 });
-
-//Create a reset button for the grid
-
