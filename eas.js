@@ -22,7 +22,7 @@ slider.classList.add('grid-size');
 slider.setAttribute('type', 'range');
 slider.setAttribute('min', '1');
 slider.setAttribute('max', '64');
-slider.setAttribute('value', '32');
+slider.setAttribute('value', '34');
 buttons.appendChild(slider);
 
 //Create div to display the value of the range slider
