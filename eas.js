@@ -13,7 +13,7 @@ header.appendChild(title);
 //Create instructions for etch-a-sketch
 const howTo = document.createElement('div');
 howTo.classList.add('rules');
-howTo.textContent = 'Select a grid size and have fun';
+howTo.textContent = 'Select a grid size and have fun!';
 header.appendChild(howTo);
 
 //Create slider button for user to choose grid size
