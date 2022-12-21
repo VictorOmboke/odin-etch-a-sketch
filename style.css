@@ -4,6 +4,7 @@
 }
 
 body {
+    background-color: #808080;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,14 +13,21 @@ body {
     padding: 0;
 }
 
+#body {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
 #grid-container {
     display: grid;
-    border: 1px solid red;
     width: 600px;
     height: 600px;
 }
 
 #container {
+    background-color: #ffffff;
     display: grid;
     gap: 0;
     grid-template-columns: repeat(var(--grid-cols), 1fr);
@@ -27,7 +35,7 @@ body {
 }
 
 .grid-item {
-    border: 1px solid black;
+    border: solid 0.3px #aaaaaa;
     padding: 0.2rem;
 }
 
@@ -67,4 +75,12 @@ body {
     height: 25px;
     background: #ffffff;
     cursor: pointer;
+}
+
+.reset {
+    color: #ffffff;
+    width: 150px;
+    height: 30px;
+    background-color: #139f00;
+    border-radius: 5px;
 }
